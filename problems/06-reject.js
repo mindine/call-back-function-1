@@ -21,7 +21,15 @@ let hasA = function(s) {
 console.log(reject(['breadth', 'GRAPH', 'depth', 'height'], hasA)); // [ 'depth', 'height' ]
 *******************************************************************************/
 
-let reject = function() {
+let reject = function(arr , cb) {
+    let res =[];
+    for ( let i = 0 ; i < arr.length ; i ++){
+        let ele = arr[i];
+        if ( !cb(ele)){
+            res.push(ele)
+        }
+    }
+    return res
 
 };
 
@@ -29,6 +37,14 @@ let reject = function() {
 
 
 
+let isEven = function(n) {
+    return n % 2 === 0;
+};
+console.log(reject([7, 8, 5, 6, 12, 11], isEven)); // [ 7, 5, 11 ]
 
+let hasA = function(s) {
+    return s.toLowerCase().includes('a');
+};
+console.log(reject(['breadth', 'GRAPH', 'depth', 'height'], hasA)); // [ 'depth', 'height' ]
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = reject;
