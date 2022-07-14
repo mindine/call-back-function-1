@@ -31,16 +31,16 @@ console.log(chainMap(4, half, square));         // 4
 
 let chainMap = function (val, ...cb) {
 
-    let res = 0;
-    for (let i = 0; i < cb.length; i++) {
-        let el = cb[i];
-        res = el(val);
-    }
-    // let res = cb(val);
+    // let res = 0;
+    // for (let i = 0; i < cb.length; i++) {
+    //     let el = cb[i];
+    //     res = el(val);
+    // }
+    // // let res = cb(val);
 
 
 
-    return res;
+    // return res;
 
 };
 let add5 = function (n) {
